@@ -5,16 +5,22 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Platform
+  - Cheese
+  - Enemy
+  - Bat
+  - boost
+  - destroyer
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - Ground
   - Player
-  - 
+  - Bat
   - 
   - 
   - 

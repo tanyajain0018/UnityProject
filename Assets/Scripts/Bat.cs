@@ -7,10 +7,10 @@ public class Bat : MonoBehaviour
 {
     Rigidbody2D _rigidbody;
     int speed = 3;
-    int direction = -1; 
+    int direction = -1;
     public LayerMask playerLayer;
     Animator _animator;
-    enum State 
+    enum State
     {
         Idle,
         Walk,
@@ -55,7 +55,7 @@ public class Bat : MonoBehaviour
                 break;
             default:
                 _animator.SetFloat("Speed",0);
-                break;  
+                break;
         }
     }
 
@@ -65,9 +65,10 @@ public class Bat : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
+        /*
         if(other.CompareTag("Player")){
             PublicVars.score = 0;
             SceneManager.LoadScene("Level1");
-        }
+        }*/
     }
 }

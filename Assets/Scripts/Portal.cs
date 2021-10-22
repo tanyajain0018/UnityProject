@@ -5,21 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioClip tele;
+    AudioSource _audiosrc;
+    public string sceneName;
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
-            SceneManager.LoadScene("Level2");
+          StartCoroutine(playaudio());
         }
+    }
+
+    IEnumerator playaudio(){
+      PublicVars.move =false;
+      _audiosrc= GetComponent<AudioSource>();
+      _audiosrc.PlayOneShot(tele);
+      yield return new WaitForSeconds(1f);
+      PublicVars.move = true;
+      PublicVars.prevcheese = PublicVars.cheeseScore;
+      PublicVars.cheeseScore = 0;
+      SceneManager.LoadScene(sceneName);
     }
 }
